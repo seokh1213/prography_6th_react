@@ -1,0 +1,23 @@
+.TodosContainer {
+  width: 500px;
+}
+::placeholder {
+  color: #e0e0e0;
+}
+.form-control:focus {
+  border-color: #ced4da;
+  box-shadow: none;
+}
+.done {
+  text-decoration-line: line-through;
+  color: #e0e0e0;
+}
+.todo-item {
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+.todo-text {
+  width: 76%;
+  padding: 0.375rem 0.75rem;
+}

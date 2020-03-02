@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useTodosDipatchContext } from "../../contexts/TodosContext";
+import { useTodosDipatchContext } from "../../api/TodosContext";
 
 export type TodoItemProps = {
   todo: {
