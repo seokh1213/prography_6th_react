@@ -8,9 +8,9 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Nav></Nav>
+        <Nav />
         <Switch>
-          <Route path={["/", "/todo"]}>
+          <Route exact path={["/", "/todos"]}>
             <TodoContainer />
           </Route>
           <Route path="/movies">

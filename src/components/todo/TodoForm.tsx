@@ -6,11 +6,13 @@ export default function TodoForm() {
   const dispatch = useTodosDipatchContext();
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    dispatch({
-      type: "CREATE",
-      text: value
-    });
-    setValue("");
+    if (value !== "") {
+      dispatch({
+        type: "CREATE",
+        text: value
+      });
+      setValue("");
+    }
   };
   return (
     <form onSubmit={handleSubmit}>

@@ -7,7 +7,7 @@ function Nav() {
       <ul>
         <li>프로그라피 프론트 홍석현</li>
         <li>
-          <Link to="/todo">Todo</Link>
+          <Link to="/todos">Todo</Link>
         </li>
         <li>
           <Link to="/movies">영화</Link>
