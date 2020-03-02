@@ -34,7 +34,9 @@ export default function TodoItem({ todo }: TodoItemProps) {
         <>
           <span
             onClick={() => dispatch({ type: "TOGGLE", id: todo.id })}
-            className={`todo-text ${todo.done ? "done" : ""} overflow-hidden`}
+            className={`todo-text ${
+              todo.done ? "done" : ""
+            } overflow-auto text-secondary`}
           >
             {todo.text}
           </span>

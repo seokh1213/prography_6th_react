@@ -7,10 +7,10 @@ import { TodosContextProvider } from "./contexts/TodosContext";
 
 function App() {
   return (
-    <TodosContextProvider>
-      <Router>
-        <div className="App">
-          <Nav />
+    <Router>
+      <div className="App">
+        <Nav />
+        <TodosContextProvider>
           <Switch>
             <Route exact path={["/", "/todos"]}>
               <TodoContainer />
@@ -19,9 +19,9 @@ function App() {
               <Movies />
             </Route>
           </Switch>
-        </div>
-      </Router>
-    </TodosContextProvider>
+        </TodosContextProvider>
+      </div>
+    </Router>
   );
 }
 
