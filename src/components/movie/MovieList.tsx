@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from "react";
+import MovieItem from "./MovieItem";
 
 export default function MovieList() {
   const [isError, setIsError] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [movies, setMovies] = useState<movie[]>([]);
+  const [movies, setMovies] = useState<Movie[]>([]);
 
   useEffect(() => {
     const fetchMovies = async () => {
       setIsError(false);
       setIsLoading(true);
       try {
-        const _movies: movie[] = await fetch(
+        const _movies: Movie[] = await fetch(
           "https://yts.mx/api/v2/list_movies.json?limit=50"
         )
           .then(res => res.json())
@@ -29,15 +30,30 @@ export default function MovieList() {
   }
 
   if (isLoading) {
-    return <div className="loading">Loading...</div>;
+    return (
+      <div className="loading text-white">
+        Loading...&nbsp;
+        <span
+          className="spinner-border"
+          role="status"
+          aria-hidden="true"
+        ></span>
+      </div>
+    );
   }
 
   if (!movies) return null;
 
-  return <div>good</div>;
+  return (
+    <div className="d-flex flex-column">
+      {movies.map(movie => (
+        <MovieItem movie={movie} />
+      ))}
+    </div>
+  );
 }
 
-export type movie = {
+export type Movie = {
   background_image: string;
   background_image_original: string;
   date_uploaded: string;
