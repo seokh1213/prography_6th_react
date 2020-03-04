@@ -45,9 +45,9 @@ export default function MovieList() {
   if (!movies) return null;
 
   return (
-    <div className="d-flex flex-column">
+    <div className="MovieList row row-cols-1 row-cols-md-5">
       {movies.map(movie => (
-        <MovieItem movie={movie} />
+        <MovieItem key={movie.id} movie={movie} />
       ))}
     </div>
   );
